@@ -1,48 +1,76 @@
-# **Particle Blueprint: Getting Started - Hello World**
+# **Particle Blueprint: Multi-Container Communication with Redis**
 
 ## **Introduction**
-Welcome to the **Hello World Blueprint App** for Particle devices! This project serves as a **starting point** for new users to get acquainted with **Particle's IoT platform** on **Linux-based devices**. It demonstrates a simple yet powerful "Hello, World!" program that runs inside a **Node.js-based container**.
+Welcome to the **Multi-Container Communication Blueprint App** for Particle devices! This project demonstrates how to use **Redis as an event queue** to enable communication between services inside **Docker containers**.
 
-**Use this blueprint to begin your IoT journey!** Simply follow the instructions to set up, build, and run your first Node.js containerized application.
+In this example, a **Python producer** sends messages to a **Redis queue**, and a **Node.js consumer** listens for and processes those messages. This is a great starting point for building **event-driven applications** on **Linux-based devices** like **Tachyon**.
+
+**Use this blueprint to learn how to manage multi-container applications and inter-service communication!** 🚀
 
 ---
 
 ## **Project Structure**
-This repository supports **Linux-based devices**, with a **Node.js implementation**.
+This repository supports **Linux-based devices** and runs **multiple containers** to handle event-driven messaging.
 
 ```
-/particle-hello-world-node
-│── /hello-world-node/    # The Node.js Hello World app
+/particle-container-comms
+│── redis.conf         =# Redis configuration (optional)
+│── /python_app/       # Python app that sends messages to Redis
+│    ├── app.py
+│    ├── requirements.txt
 │    ├── Dockerfile
-│    ├── docker-compose.yaml
-│    ├── index.js
-│── README.md
+│── /node_app/         # Node.js app that listens for Redis messages
+│    ├── app.js
+│    ├── package.json
+│    ├── Dockerfile
+│── docker-compose.yml      # Defines and runs all containers
+/README.md               # This file!
+/blueprint.yaml        #Blueprint file!
 ```
 
-## **Getting Started: Linux Devices (Tachyon)**
-For **Linux-based devices**, we run the Hello World app **inside a container**.
+---
 
+## **How It Works**
+This app runs **three containers**:
+1. **Redis** – Stores messages in a queue (`queue:messages`).
+2. **Python Producer** – Sends messages to Redis (`RPUSH`).
+3. **Node.js Consumer** – Listens for messages (`BLPOP`) and processes them.
+
+This approach is **event-driven**, meaning messages are handled in real time.
+
+---
+
+## **Getting Started: Linux Devices (Tachyon & Raspberry Pi)**
 ### **1. Set Up Your Particle Linux Device**
 Ensure your **Tachyon** or **other supported Linux device** is connected and running.
 
 ### **2. Clone & Set Up the Project**
 ```sh
-git clone https://github.com/particle-iot/blueprint-hello-world-node.git
-cd particle-hello-world-node
+git clone https://github.com/particle-iot/blueprint-container-comms.git
+cd particle-container-comms
 ```
 
-### **3. Build & Run the Container**
+### **3. Build & Run the Containers**
 ```sh
 particle app push
 ```
+This will start **Redis, the Python producer, and the Node.js consumer** inside containers.
+
+### **4. See It in Action**
+Check the logs to see the communication happening:
+```sh
+docker-compose logs -f
+```
+
+You should see **Python sending messages** and **Node.js receiving them**.
 
 ---
 
 ## **Contributions**
-We welcome contributions to this blueprint! If you'd like to suggest changes, please open a **pull request** in the [Hello World Node GitHub Repository](https://github.com/particle-iot/blueprint-hello-world-node).
+We welcome contributions! If you'd like to improve this blueprint, please open a **pull request** in the [GitHub Repository](https://github.com/particle-iot/blueprint-container-comms).
 
 ---
 
 ## **Supported Devices**
 This blueprint supports:
-- **Linux-based devices**, starting with **Tachyon**
+- **Linux-based devices**, starting with **Tachyon** and **Raspberry Pi**.

@@ -1,0 +1,45 @@
+slug: particle-container-comms
+type: Tutorial
+category: "Getting started"
+expertiseLevel: "Beginner"
+tags: ["Application", "Containers", "Messaging"]
+icon: assets/container-crane.svg
+gitrepo: https://github.com/particle-iot/blueprint-container-comms
+name: "Container Communications"
+shortDescription: A multi-container application demonstrating inter-service communication using Redis as an event queue.
+version: 1.0.0
+models: []
+language: [ "Python", "Node.js", "Redis" ]
+cloudServices:
+integrations: []
+supportedDevices:
+  - name: Tachyon
+  - name: Raspberry Pi
+webIdeLink: https://go.particle.io/shared_apps/6761f677ca3d870509cd4384
+webSetupLink: part.cl/setup-tachyon
+hardwareDependencies:
+  - name: Supported device
+containers:
+  - name: container-local-comms/redis
+  - name: container-local-comms/python_app
+  - name: container-local-comms/node_app
+introduction: |
+  Welcome to the **Container Communications Blueprint App** for Particle! 
+
+  This tutorial showcases a multi-container application where:
+  - A **Redis** instance acts as an event queue.
+  - A **Python producer** sends messages to the queue.
+  - A **Node.js consumer** listens for and processes messages.
+
+description: |
+  This tutorial introduces **multi-container applications** running on a Linux-based edge device like **Tachyon or Raspberry Pi**.
+  
+  Using **Redis as a queue**, this blueprint demonstrates:
+  - How different services (Python & Node.js) can communicate asynchronously.
+  - How to use **Redis Lists (`RPUSH` and `BLPOP`)** as a lightweight event bus.
+  - The basics of **Docker Compose** to orchestrate multiple containers.
+
+additionalResources:
+  - [Tachyon Edge AI Overview](https://particle.io/tachyon)
+  - [Redis Queue Documentation](https://redis.io/docs/data-types/lists/)
+  - [Docker Compose Overview](https://docs.docker.com/compose/)

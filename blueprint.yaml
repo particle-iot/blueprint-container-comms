@@ -19,10 +19,7 @@ webIdeLink: https://go.particle.io/shared_apps/6761f677ca3d870509cd4384
 webSetupLink: part.cl/setup-tachyon
 hardwareDependencies:
   - name: Supported device
-containers:
-  - name: container-local-comms/redis
-  - name: container-local-comms/python_app
-  - name: container-local-comms/node_app
+containers: container-local-comms
 introduction: |
   Welcome to the **Container Communications Blueprint App** for Particle! 
 

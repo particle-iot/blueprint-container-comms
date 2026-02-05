@@ -1,16 +1,16 @@
 slug: particle-container-comms
 type: Tutorial
-category: "Getting started"
+category: "Reference applications"
 expertiseLevel: "Beginner"
-tags: ["Application", "Containers", "Messaging"]
+tags: ["Containers"]
 icon: assets/container-crane.svg
 gitrepo: https://github.com/particle-iot/blueprint-container-comms
 name: "Container Communications"
 shortDescription: A multi-container application demonstrating inter-service communication using Redis as an event queue.
 version: 1.0.0
 models: []
-language: [ "Python", "Node.js", "Redis" ]
-cloudServices:
+language: ["Python", "Node.js"]
+cloudServices: []
 integrations: []
 supportedDevices:
   - name: Tachyon

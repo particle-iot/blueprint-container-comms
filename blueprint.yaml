@@ -37,6 +37,11 @@ description: |
   - The basics of **Docker Compose** to orchestrate multiple containers.
 
 additionalResources:
-  - [Tachyon Edge AI Overview](https://particle.io/tachyon)
-  - [Redis Queue Documentation](https://redis.io/docs/data-types/lists/)
-  - [Docker Compose Overview](https://docs.docker.com/compose/)
+  - title: Tachyon Edge AI Overview
+    link: https://particle.io/tachyon
+  - title: Redis Queue Documentation
+    link: https://redis.io/docs/data-types/lists/
+  - title: Docker Compose Overview
+    link: https://docs.docker.com/compose/
+  - title: Docker Compose Overview
+    link: https://docs.docker.com/compose/

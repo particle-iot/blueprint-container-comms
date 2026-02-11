@@ -3,7 +3,7 @@ type: Tutorial
 category: "Reference applications"
 expertiseLevel: "Beginner"
 tags: ["Containers"]
-icon: assets/container-crane.svg
+icon: assets/container.svg
 gitrepo: https://github.com/particle-iot/blueprint-container-comms
 name: "Container Communications"
 shortDescription: A multi-container application demonstrating inter-service communication using Redis as an event queue.

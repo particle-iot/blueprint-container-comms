@@ -15,7 +15,7 @@ integrations: []
 supportedDevices:
   - name: Tachyon
   - name: Raspberry Pi
-webIdeLink: https://go.particle.io/shared_apps/6761f677ca3d870509cd4384
+webIdeLink:
 webSetupLink: part.cl/setup-tachyon
 hardwareDependencies:
   - name: Supported device

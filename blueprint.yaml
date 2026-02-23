@@ -16,7 +16,7 @@ supportedDevices:
   - name: Tachyon
   - name: Raspberry Pi
 webIdeLink:
-webSetupLink: part.cl/setup-tachyon
+webSetupLink: https://part.cl/setup-tachyon
 hardwareDependencies:
   - name: Supported device
 containers: container-local-comms
